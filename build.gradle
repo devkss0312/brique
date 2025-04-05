@@ -1,0 +1,77 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.7'
+    implementation 'org.jfree:jfreechart:1.5.3'
+}
+
+
+test {
+    useJUnitPlatform()
+}
+
+task runQ1(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q1'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runSyncServer(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q2.SyncServer'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runAsyncServer(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q2.AsyncServer'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runSyncClient(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q2.SyncClient'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runAsyncClient(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q2.AsyncClient'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runQ3(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q3'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runQ4(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q4'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runQ5(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q5'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+task runQ6(type: JavaExec) {
+    group = 'application'
+    main = 'org.example.Q6'
+    classpath = sourceSets.main.runtimeClasspath
+}
